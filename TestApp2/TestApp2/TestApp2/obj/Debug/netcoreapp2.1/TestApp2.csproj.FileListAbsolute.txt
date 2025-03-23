@@ -1,0 +1,12 @@
+R:\IoT\TestApp2\TestApp2\TestApp2\bin\Debug\netcoreapp2.1\TestApp2.deps.json
+R:\IoT\TestApp2\TestApp2\TestApp2\bin\Debug\netcoreapp2.1\TestApp2.runtimeconfig.json
+R:\IoT\TestApp2\TestApp2\TestApp2\bin\Debug\netcoreapp2.1\TestApp2.runtimeconfig.dev.json
+R:\IoT\TestApp2\TestApp2\TestApp2\bin\Debug\netcoreapp2.1\TestApp2.dll
+R:\IoT\TestApp2\TestApp2\TestApp2\bin\Debug\netcoreapp2.1\TestApp2.pdb
+R:\IoT\TestApp2\TestApp2\TestApp2\obj\Debug\netcoreapp2.1\TestApp2.csproj.CoreCompileInputs.cache
+R:\IoT\TestApp2\TestApp2\TestApp2\obj\Debug\netcoreapp2.1\TestApp2.AssemblyInfoInputs.cache
+R:\IoT\TestApp2\TestApp2\TestApp2\obj\Debug\netcoreapp2.1\TestApp2.AssemblyInfo.cs
+R:\IoT\TestApp2\TestApp2\TestApp2\obj\Debug\netcoreapp2.1\TestApp2.dll
+R:\IoT\TestApp2\TestApp2\TestApp2\obj\Debug\netcoreapp2.1\TestApp2.pdb
+R:\IoT\TestApp2\TestApp2\TestApp2\obj\Debug\netcoreapp2.1\TestApp2.csproj.AssemblyReference.cache
+R:\IoT\TestApp2\TestApp2\TestApp2\bin\Debug\netcoreapp2.1\TestApp2.dll.config
