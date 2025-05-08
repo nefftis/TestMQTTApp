@@ -28,6 +28,9 @@ namespace TestApp2
         Commands = 1
     }
 
+    /// <summary>
+    /// Класс взаимодействия с устройствами и реестрами YaCloud
+    /// </summary>
     class YaClient : IDisposable
     {
         public const string MqttServer = "mqtt.cloud.yandex.net";
@@ -35,6 +38,13 @@ namespace TestApp2
 
         private static X509Certificate2 rootCrt = new X509Certificate2("rootCA.crt");
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="entityId">Id сущности</param>
+        /// <param name="entity">Тип сущности</param>
+        /// <param name="topic">Тип топика</param>
+        /// <returns></returns>
         public static string TopicName(string entityId, EntityType entity, TopicType topic)
         {
             string result = (entity == EntityType.Registry) ? "$registries/" : "$devices/";
@@ -50,6 +60,10 @@ namespace TestApp2
         private ManualResetEvent oCloseEvent = new ManualResetEvent(false);
         private ManualResetEvent oConnectedEvent = new ManualResetEvent(false);
 
+        /// <summary>
+        /// Метод подключения по Tls
+        /// </summary>
+        /// <param name="certPath">Путь к сертификату</param>
         public void Start(string certPath)
         {
             X509Certificate2 certificate = new X509Certificate2(certPath);
@@ -89,9 +103,16 @@ namespace TestApp2
 
         }
 
+
+        /// <summary>
+        /// Метод подключения к облаку
+        /// </summary>
+        /// <param name="id">Id ус-ва</param>
+        /// <param name="password">Пароль</param>
+        /// <returns></returns>
         public Task Start(string id, string password)
         {
-            //setup connection options
+            // Инициилизируем настройки подключения
             MqttClientOptionsBuilderTlsParameters tlsOptions = new MqttClientOptionsBuilderTlsParameters
             {
                 SslProtocol = SslProtocols.Tls12,

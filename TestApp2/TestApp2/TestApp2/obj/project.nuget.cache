@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dLKh1Rm6DiSn7rPV0d1m4ymPsJfIYGpOqaH9x8dWAu9O1fbhVj5+vNm8FiWhQAO2te0717sQ+z1g3JOwVPGpjg==",
+  "dgSpecHash": "GnK7gVeH+33jPvDHWXLQsp1kPY9S4Bt+6yJrd2f1uhZT4HkZVsUXS+qIije2vyz8TX7FqPc+lGqg6uOXNVMD4g==",
   "success": true,
-  "projectFilePath": "R:\\IoT\\TestApp2\\TestApp2\\TestApp2\\TestApp2.csproj",
+  "projectFilePath": "r:\\IoT\\repo\\TestMQTTApp\\TestApp2\\TestApp2\\TestApp2\\TestApp2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nefftis\\.nuget\\packages\\confluent.kafka\\2.8.0\\confluent.kafka.2.8.0.nupkg.sha512",
     "C:\\Users\\Nefftis\\.nuget\\packages\\librdkafka.redist\\2.8.0\\librdkafka.redist.2.8.0.nupkg.sha512",

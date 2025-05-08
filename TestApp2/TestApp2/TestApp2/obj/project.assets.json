@@ -3972,11 +3972,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "R:\\IoT\\TestApp2\\TestApp2\\TestApp2\\TestApp2.csproj",
+      "projectUniqueName": "r:\\IoT\\repo\\TestMQTTApp\\TestApp2\\TestApp2\\TestApp2\\TestApp2.csproj",
       "projectName": "TestApp2",
-      "projectPath": "R:\\IoT\\TestApp2\\TestApp2\\TestApp2\\TestApp2.csproj",
+      "projectPath": "r:\\IoT\\repo\\TestMQTTApp\\TestApp2\\TestApp2\\TestApp2\\TestApp2.csproj",
       "packagesPath": "C:\\Users\\Nefftis\\.nuget\\packages\\",
-      "outputPath": "R:\\IoT\\TestApp2\\TestApp2\\TestApp2\\obj\\",
+      "outputPath": "r:\\IoT\\repo\\TestMQTTApp\\TestApp2\\TestApp2\\TestApp2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
