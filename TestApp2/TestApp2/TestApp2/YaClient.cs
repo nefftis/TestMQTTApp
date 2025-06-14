@@ -25,7 +25,7 @@ namespace TestApp2
     public enum TopicType
     {
         Events = 0,
-        Commands = 1
+        state = 1
     }
 
     /// <summary>
@@ -49,7 +49,7 @@ namespace TestApp2
         {
             string result = (entity == EntityType.Registry) ? "$registries/" : "$devices/";
             result += entityId;
-            result += (topic == TopicType.Events) ? "/events" : "/commands";
+            result += (topic == TopicType.Events) ? "/events" : "/state";
             return result;
         }
 

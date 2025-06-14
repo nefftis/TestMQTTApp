@@ -2,30 +2,33 @@
 using System;
 using System.Threading.Tasks;
 
-public class KafkaProducerService
+public class KafkaProducer
 {
-    private static IProducer<string, string> _producer;
+    private readonly IProducer<Null, string> _producer;
+    private readonly string _topic;
 
-    public static void Initialize(string bootstrapServers, string securityProtocol, string saslMechanism, string saslUsername, string saslPassword)
+    public KafkaProducer(string bootstrapServers, string topic)
     {
-        var producerConfig = new ProducerConfig
-        {
-            BootstrapServers = bootstrapServers,
-            SecurityProtocol = Enum.Parse<SecurityProtocol>(securityProtocol),
-            SaslMechanism = Enum.Parse<SaslMechanism>(saslMechanism),
-            SaslUsername = saslUsername,
-            SaslPassword = saslPassword
-        };
-
-        _producer = new ProducerBuilder<string, string>(producerConfig).Build();
+        var config = new ProducerConfig { BootstrapServers = bootstrapServers };
+        _producer = new ProducerBuilder<Null, string>(config).Build();
+        _topic = topic;
     }
 
-    public static async Task ProduceAsync(string topic, string message)
+    public void Send(string message)
     {
-        await _producer.ProduceAsync(topic, new Message<string, string>
-        {
-            Key = Guid.NewGuid().ToString(),
-            Value = message
-        });
+
+        _producer.Produce(_topic, new Message<Null, string> { Value = message },
+            (deliveryReport) =>
+            {
+                if (deliveryReport.Error.IsError)
+                    Console.WriteLine($"Kafka Ошибка: {deliveryReport.Error.Reason}");
+            });
+
+    }
+
+    public void Dispose()
+    {
+        _producer.Flush(TimeSpan.FromSeconds(2));
+        _producer.Dispose();
     }
 }
