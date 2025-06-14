@@ -1,0 +1,200 @@
+[
+  {
+    "ContainingType": "Node_red_API.Controllers.DeviceController",
+    "Method": "UpdateLabels",
+    "RelativePath": "api/Device/{deviceId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Node_red_API.Controllers.LabelUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.NodeRedFlowController",
+    "Method": "AddFlowFromTemplate",
+    "RelativePath": "api/NodeRedFlow/addFlowFromTemplate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.NodeRedFlowController",
+    "Method": "DeleteFlow",
+    "RelativePath": "api/NodeRedFlow/deleteFlow/{flowId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "flowId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.NodeRedFlowController",
+    "Method": "DisableFlow",
+    "RelativePath": "api/NodeRedFlow/disableFlow",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "flowId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.NodeRedFlowController",
+    "Method": "EnableFlow",
+    "RelativePath": "api/NodeRedFlow/enableFlow",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "flowId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.RegistrAndDeviceController",
+    "Method": "GetRegistriesAndDevices",
+    "RelativePath": "api/RegistrAndDevice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.RegistrationController",
+    "Method": "AddRegistrANDDevice",
+    "RelativePath": "api/Registration/AddRegistrANDDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "registryDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "deviceName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "deviceDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "labelsRegistr",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "labelsDevice",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minValue",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxValue",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.RegistryStatusController",
+    "Method": "ActivateRegistry",
+    "RelativePath": "api/registries/{registryId}/activate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.RegistryStatusController",
+    "Method": "DisableRegistry",
+    "RelativePath": "api/registries/{registryId}/disable",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Node_red_API.Controllers.ConvertToMainJsonController",
+    "Method": "ConvertToMainJson",
+    "RelativePath": "ConvertToMainJson",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "Node_red_API.Controllers.InputModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "NumberFile",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeDevice",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

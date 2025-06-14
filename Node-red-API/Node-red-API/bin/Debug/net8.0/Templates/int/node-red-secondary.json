@@ -1,0 +1,147 @@
+{
+  "id": "55574a5c.e6e6e4 {{REGISTRY-ID}}",
+  "label": "House ROOM {{REGISTRY-ID}}",
+  "nodes": [
+    {
+      "id": "78544752.ec5418 {{REGISTRY-ID}}",
+      "type": "json",
+      "z": "55574a5c.e6e6e4 {{REGISTRY-ID}}",
+      "name": "",
+      "property": "payload",
+      "action": "",
+      "pretty": false,
+      "x": 270,
+      "y": 240,
+      "wires": [
+        [
+          "a8c0a13e.ee82a {{REGISTRY-ID}}"
+        ]
+      ]
+    },
+    {
+      "id": "a8c0a13e.ee82a {{REGISTRY-ID}}",
+      "type": "function",
+      "z": "55574a5c.e6e6e4 {{REGISTRY-ID}}",
+      "name": "Parsing JSON {{REGISTRY-ID}}",
+      "func": "\nvar speed = {};\n\n\nspeed.payload = msg.payload.d.speed\n\nreturn [speed];",
+      "outputs": 1,
+      "timeout": "",
+      "noerr": 0,
+      "initialize": "",
+      "finalize": "",
+      "libs": [],
+      "x": 480,
+      "y": 240,
+      "wires": [
+        [
+          "a7e75a63.e4a438 {{REGISTRY-ID}}"
+        ]
+      ]
+    },
+    {
+      "id": "a7e75a63.e4a438 {{REGISTRY-ID}}",
+      "type": "ui_text",
+      "z": "55574a5c.e6e6e4 {{REGISTRY-ID}}",
+      "group": "265b61b2.7845de {{ROMM}}",
+      "order": 3,
+      "width": 0,
+      "height": 0,
+      "name": "Значение {{DEVICE-NAME}}",
+      "label": "Значение {{DEVICE-NAME}}",
+      "format": "{{msg.payload}}",
+      "layout": "row-spread",
+      "x": 720,
+      "y": 240,
+      "wires": []
+    },
+    {
+      "id": "838b8dd1.3c933 {{REGISTRY-ID}}",
+      "type": "debug",
+      "z": "55574a5c.e6e6e4 {{REGISTRY-ID}}",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "statusVal": "",
+      "statusType": "auto",
+      "x": 210,
+      "y": 120,
+      "wires": []
+    },
+    {
+      "id": "100de22f.1d886e {{REGISTRY-ID}}",
+      "type": "mqtt in",
+      "z": "55574a5c.e6e6e4 {{REGISTRY-ID}}",
+      "name": "registry {{REGISTRY-ID}}",
+      "topic": "$registries/{{REGISTRY-ID}}/state",
+      "qos": "1",
+      "datatype": "auto",
+      "broker": "da49c30d.b7fb2 {{REGISTRY-ID}}",
+      "nl": false,
+      "rap": false,
+      "inputs": 0,
+      "x": 70,
+      "y": 240,
+      "wires": [
+        [
+          "838b8dd1.3c933 {{REGISTRY-ID}}",
+          "78544752.ec5418 {{REGISTRY-ID}}"
+        ]
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "id": "265b61b2.7845de {{ROMM}}",
+      "type": "ui_group",
+      "name": "Комната {{ROMM}}",
+      "tab": "9eb927d1.564038 {{REGISTRY-ID}}",
+      "order": 3,
+      "disp": true,
+      "width": "5",
+      "collapse": false,
+      "className": ""
+    },
+    {
+      "id": "da49c30d.b7fb2 {{REGISTRY-ID}}",
+      "type": "mqtt-broker",
+      "name": "iot-core-subscription {{REGISTRY-ID}}",
+      "broker": "mqtt.cloud.yandex.net",
+      "port": "8883",
+      "tls": "",
+      "clientid": "",
+      "autoConnect": true,
+      "usetls": true,
+      "protocolVersion": 4,
+      "keepalive": "60",
+      "cleansession": true,
+      "autoUnsubscribe": true,
+      "birthTopic": "",
+      "birthQos": "0",
+      "birthPayload": "",
+      "birthMsg": {},
+      "closeTopic": "",
+      "closeQos": "0",
+      "closePayload": "",
+      "closeMsg": {},
+      "willTopic": "",
+      "willQos": "0",
+      "willPayload": "",
+      "willMsg": {},
+      "userProps": "",
+      "sessionExpiry": ""
+    },
+    {
+      "id": "9eb927d1.564038 {{REGISTRY-ID}}",
+      "type": "ui_tab",
+      "name": "{{Zdanie}}",
+      "icon": "star",
+      "order": 1,
+      "disabled": false,
+      "hidden": false
+    }
+  ]
+}

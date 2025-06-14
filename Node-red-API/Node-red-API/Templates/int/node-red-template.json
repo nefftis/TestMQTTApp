@@ -1,0 +1,78 @@
+{
+  "id": "bbf6d7c6.937b78 {{DEVICE-ID}}",
+  "label": "Device {{DEVICE-ID}}",
+  "nodes": [
+    {
+      "id": "a8a052eb.958af {{DEVICE-ID}}",
+      "type": "mqtt out",
+      "name": "Device {{DEVICE-ID}}",
+      "topic": "$registries/{{REGISTRY-ID}}/events",
+      "qos": "1",
+      "retain": "",
+      "broker": "66c9fe0f.fa37 {{DEVICE-ID}}",
+      "x": 610,
+      "y": 140,
+      "wires": []
+    },
+    {
+      "id": "dd3eaa26.d18508 {{DEVICE-ID}}",
+      "type": "inject",
+      "name": "Send Data {{DEVICE-ID}}",
+      "repeat": "3",
+      "crontab": "",
+      "once": false,
+      "onceDelay": "",
+      "topic": "",
+      "payload": "true",
+      "payloadType": "bool",
+      "x": 110,
+      "y": 140,
+      "wires": [
+        [
+          "46feee67.7959b {{DEVICE-ID}}"
+        ]
+      ]
+    },
+    {
+      "id": "46feee67.7959b {{DEVICE-ID}}",
+      "type": "function",
+      "name": "payload {{DEVICE-ID}}",
+      "func": "// Указываем минимальное и максимальное значения\nvar min = {{MIN}}; // минимальное значение\nvar max = {{MAX}}; // максимальное значение\n\n// Генерируем случайное число в заданном диапазоне\nvar speed1 = Math.floor(Math.random() * (max - min + 1)) + min;\n\n// Create MQTT message in JSON\nmsg = {\n  payload: JSON.stringify(\n    {\n      d:{\n        \"speed\" : speed1\n      }\n    }\n  )\n};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 360,
+      "y": 140,
+      "wires": [
+        [
+          "a8a052eb.958af {{DEVICE-ID}}"
+        ]
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "id": "66c9fe0f.fa37 {{DEVICE-ID}}",
+      "type": "mqtt-broker",
+      "name": "{{REGISTRY-ID}}",
+      "broker": "mqtt.cloud.yandex.net",
+      "port": "8883",
+      "tls": "",
+      "clientid": "",
+      "usetls": true,
+      "username": "{{DEVICE-ID}}",
+      "password": "tESTbROKER1234",
+      "compatmode": false,
+      "keepalive": "60",
+      "cleansession": true,
+      "birthTopic": "",
+      "birthQos": "0",
+      "birthPayload": "",
+      "closeTopic": "",
+      "closeQos": "0",
+      "closePayload": "",
+      "willTopic": "",
+      "willQos": "0",
+      "willPayload": ""
+    }
+  ]
+}
